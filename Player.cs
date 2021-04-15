@@ -37,18 +37,18 @@ namespace ninjas
         /// Attacks a target
         /// </summary>
         /// <returns>true if attack was a success</returns>
-        public bool Attack(Enemy target)
+        public bool Attack(Health target)
         {
             if (target == null)
             {
                 return false;
             }
-            if (target.health.IsDead())
+            if (target.IsDead())
             {
                 return false;
             }
 
-            target.health.TakeDamage(attackDamage);
+            target.TakeDamage(this.attackDamage);
 
             return true;
         }
